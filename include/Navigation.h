@@ -25,27 +25,42 @@
 
 /**
  *@file       ObstacleDetector.cpp
- *@author     Arpit Aggarwal
+ *@author     Shantam Bajpai
  *@copyright  MIT License
- *@brief      Describes the Obstacle Detector class.
+ *@brief      Describes the Navigation class.
  */
 
-#include <ros/ros.h>
-#include "std_msgs/Float64.h"
-#include <sensor_msgs/LaserScan.h>
+#include <geometry_msgs/Twist.h>
 #include <ObstacleDetector.h>
 
-ObstacleDetector::ObstacleDetector() {
-}
+class Navigation {
+ public:
+  /*
+   *@brief: Constructor for the Navigation class
+   */
+  Navigation();
 
-void ObstacleDetector::laserCallback(const sensor_msgs::LaserScan::ConstPtr& data) {
-}
+  /*
+   * @brief: method to rotate or move the turtlebot linearly
+   * @param: detect- Is a boolean variable which is 1 when the obstacle is detected and 0 when
+   *         the obstacle is not in range
+   */
+  void move(bool detect);
 
-void ObstacleDetector::distCallback(const std_msgs::Float64::ConstPtr& data) {
-}
+  /*
+   * @brief: Destructor for the Navigation class
+   */
+  ~Navigation();
 
-bool ObstacleDetector::getIsCollision() {
-}
+ private:
+  // Variable of type ros::NodeHandle
+  ros::NodeHandle nh;
 
-void ObstacleDetector::setIsCollision() {
-}
+  // Variable of type ros::Publisher
+  ros::Publisher pubNav;
+
+  // Object of ObstacleDetector class
+  ObstacleDetector obstacle;
+
+
+};
