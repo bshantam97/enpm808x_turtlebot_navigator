@@ -25,16 +25,16 @@
 
 /**
  *@file       ObstacleDetector.h
- *@author     Arpit Aggarwal
  *@copyright  MIT License
- *@brief      Defines the Obstacle Detector class.
+ *@brief      Defines the ObstacleDetector class.
  */
 
 #ifndef TURTLEBOT_NAVIGATOR_INCLUDE_OBSTACLEDETECTOR_H_
 #define TURTLEBOT_NAVIGATOR_INCLUDE_OBSTACLEDETECTOR_H_
 
+#include <iostream>
 #include <ros/ros.h>
-#include "std_msgs/Float64.h"
+#include <std_msgs/Float64.h>
 #include <sensor_msgs/LaserScan.h>
 
 class ObstacleDetector {
