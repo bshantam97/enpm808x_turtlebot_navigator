@@ -52,15 +52,8 @@ TEST(NavigationTest, NavigationTest) {
  *@param: moveMethodTest  Name of the test
  */
 TEST(NavigationTest , moveMethodTest) {
-  ObstacleDetector obs;
-  ros::NodeHandle node;
-  geometry_msgs::Twist twist;
-  while (ros::ok()) {
-    if (obs.getIsCollision() == true) {
-      EXPECT_TRUE(twist.linear.x = 0);
-    } else {
-      EXPECT_TRUE(twist.angular.z = 0);
-    }
-    ros::spinOnce();
-  }
+  Navigation nav;
+  EXPECT_NO_FATAL_FAILURE(nav.move(true));
+  nav.obstacle.setIsCollision(false);
+  EXPECT_NO_FATAL_FAILURE(nav.move(nav.obstacle.getIsCollision()));
 }
