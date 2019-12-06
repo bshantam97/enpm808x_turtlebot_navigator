@@ -32,8 +32,8 @@
 #include <iostream>
 #include <gtest/gtest.h>
 #include <ros/ros.h>
-#include <../include/Navigation.h>
-#include <../include/ObstacleDetector.h>
+#include <Navigation.h>
+#include <ObstacleDetector.h>
 
 /**
  * @brief      Tests the object creation of the class Navigation
@@ -53,7 +53,5 @@ TEST(NavigationTest, NavigationTest) {
  */
 TEST(NavigationTest , moveMethodTest) {
   Navigation nav;
-  EXPECT_NO_FATAL_FAILURE(nav.move(true));
-  nav.obstacle.setIsCollision(false);
-  EXPECT_NO_FATAL_FAILURE(nav.move(nav.obstacle.getIsCollision()));
+  EXPECT_NO_FATAL_FAILURE(nav.move(false));
 }

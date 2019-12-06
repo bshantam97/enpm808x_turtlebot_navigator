@@ -100,9 +100,9 @@ TEST(ObstacleDetectorTest, DistCallbackMethodTest) {
     // Create ros node
     ros::NodeHandle node;
     // Create a ros publisher
-    ros::Publisher pub = node.advertise<std_msgs::Float64>("/scan", 50);
+    ros::Publisher pub = node.advertise<std_msgs::Float64>("/dist", 50);
     // Create a ros subscriber
-    ros::Subscriber sub = node.subscribe<std_msgs::Float64>("/scan", 50, &ObstacleDetector::distCallback, &obstacleDetector);
+    ros::Subscriber sub = node.subscribe<std_msgs::Float64>("/dist", 50, &ObstacleDetector::distCallback, &obstacleDetector);
 
     // Check collision flag
     while(ros::ok()) {
