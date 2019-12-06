@@ -36,10 +36,8 @@ set(LINK_LIBS
     ${catkin_LIBRARIES}
 )
 
-#add_executable(turtlebot_navigator src/main.cpp)
-#target_link_libraries(turtlebot_navigator ${catkin_LIBRARIES})
-
-
+add_executable(turtlebot_navigator src/main.cpp src/Navigation.cpp src/ObstacleDetector.cpp)
+target_link_libraries(turtlebot_navigator ${catkin_LIBRARIES})
 
 if(CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
