@@ -61,17 +61,17 @@ Navigation::Navigation() {
  */
 
 void Navigation::move(bool detect) {
-  ros::Rate loopRate;
+  ros::Rate loopRate(10);
   while (ros::ok()) {
     detect = obstacle.getIsCollision();
     if (detect == true) {
       ROS_WARN_STREAM("The object is in range, Turn !!!");
       msg.linear.x = 0;
-      msg.angular.z = 1;
+      msg.angular.z = 0.6;
     } else {
       ROS_INFO_STREAM("Keep investigating the area");
       msg.angular.z = 0;
-      msg.linear.z = 1;
+      msg.linear.x = 0.6;
     }
     pubNav.publish(msg);
     ros::spinOnce();
