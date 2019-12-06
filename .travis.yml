@@ -60,8 +60,8 @@ before_install:
   - sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu $ROS_CI_DESKTOP main\" > /etc/apt/sources.list.d/ros-latest.list"
   - sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
   - sudo apt-get update -qq
-  - sudo apt-get install dpkg
-  - sudo apt-get install -y python-catkin-pkg python-rosdep python-wstool
+  - sudo apt-get install --allow-unauthenticated dpkg
+  - sudo apt-get install -y --allow-unauthenticated python-catkin-pkg python-rosdep python-wstool
   # Add opencv support in ROS
   #- sudo apt-get install libopencv-dev
   # install lcov to generate code coverage data
@@ -70,7 +70,7 @@ before_install:
   - gem install coveralls-lcov 
   # Install ROS-Base: (Bare Bones) ROS package, build, and communication libraries. No GUI tools. 
   - sudo apt-get install --allow-unauthenticated ros-$ROS_DISTRO-ros-base
-  - sudo apt-get install --allow-unauthenticated ros-$ROS_DISTRO-std-msgs ros-$ROS_DISTRO-sensor-msgs ros-$ROS_DISTRO-geometry-msgs
+  - sudo apt-get install --allow-unauthenticated ros-$ROS_DISTRO-std-msgs ros-$ROS_DISTRO-sensor-msgs ros-$ROS_DISTRO-geometry-msgs ros-$ROS_DISTRO-octomap ros-$ROS_DISTRO-octomap-ros ros-$ROS_DISTRO-octomap-msgs ros-$ROS_DISTRO-tf2-msgs ros-$ROS_DISTRO-tf2 ros-$ROS_DISTRO-tf2-py ros-$ROS_DISTRO-tf2-ros ros-$ROS_DISTRO-tf
   - source /opt/ros/$ROS_DISTRO/setup.bash
   # Prepare rosdep to install dependencies.
   - sudo rosdep init
