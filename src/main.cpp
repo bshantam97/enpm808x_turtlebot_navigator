@@ -29,10 +29,14 @@
  *@brief      main method for navigator implementation
  */
 
-#include<ros/ros.h>
-#include<../include/Navigation.h>
-#include<iostream>
+#include <ros/ros.h>
+#include <Navigation.h>
+#include <iostream>
 
 int main(int argc, char** argv) {
-  ros::init(argc, argv, "navigator");
+  ros::init(argc, argv, "turtlebot_navigator");
+
+  Navigation navigation;
+  navigation.move(true);
+  return 0;
 }
