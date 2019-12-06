@@ -59,6 +59,9 @@ class Navigation {
   // Variable of type ros::Publisher
   ros::Publisher pubNav;
 
+  // Object to extract linear and angular velocities
+  geometry_msgs::Twist msg;
+
   // Object of ObstacleDetector class
   ObstacleDetector obstacle;
 

@@ -31,13 +31,27 @@
  */
 #include <Navigation.h>
 #include <geometry_msgs/Twist.h>
+#include <sensor_msgs/LaserScan.h>
+
 
 /*
  * @brief: Constructor for the Navigation Class
  */
 
 Navigation::Navigation() {
+  // Initialize the publisher to advertise the velocities to the turtlebot
+  pubNav = nh.advertise<geometry_msgs::Twist>("/mobile_base/commands/velocity",
+                                              1000);
 
+  // Initializing the linear and angular velocities to be zero
+  msg.linear.x = 0;
+  msg.linear.y = 0;
+  msg.linear.z = 0;
+  msg.angular.x = 0;
+  msg.angular.y = 0;
+  msg.angular.z = 0;
+
+  pubNav.publish(msg);
 }
 
 /*
@@ -47,7 +61,22 @@ Navigation::Navigation() {
  */
 
 void Navigation::move(bool detect) {
-
+  ros::Rate loopRate;
+  while (ros::ok()) {
+    detect = obstacle.getIsCollision();
+    if (detect == true) {
+      ROS_WARN_STREAM("The object is in range, Turn !!!");
+      msg.linear.x = 0;
+      msg.angular.z = 1;
+    } else {
+      ROS_INFO_STREAM("Keep investigating the area");
+      msg.angular.z = 0;
+      msg.linear.z = 1;
+    }
+    pubNav.publish(msg);
+    ros::spinOnce();
+    loopRate.sleep();
+  }
 }
 
 /*
@@ -55,5 +84,16 @@ void Navigation::move(bool detect) {
  */
 
 Navigation::~Navigation() {
+  ROS_INFO("Destructor being invoked: linear and  angular velocities are zero");
 
+  // Set the linear and angular velocities to be zero
+  msg.linear.x = 0;
+  msg.linear.y = 0;
+  msg.linear.z = 0;
+  msg.angular.x = 0;
+  msg.angular.y = 0;
+  msg.angular.z = 0;
+
+  // Publish the message
+  pubNav.publish(msg);
 }
