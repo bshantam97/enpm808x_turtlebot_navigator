@@ -29,6 +29,8 @@
  *@copyright  MIT License
  *@brief      Describes the Navigation class.
  */
+#ifndef INCLUDE_NAVIGATION_H_
+#define INCLUDE_NAVIGATION_H_
 
 #include <geometry_msgs/Twist.h>
 #include <ObstacleDetector.h>
@@ -65,5 +67,6 @@ class Navigation {
   // Object of ObstacleDetector class
   ObstacleDetector obstacle;
 
-
 };
+
+#endif // _INCLUDE_NAVIGATION_H_

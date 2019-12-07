@@ -28,12 +28,11 @@
  *@copyright  MIT License
  *@brief      Implements the methods of the ObstacleDetector class.
  */
-
-#include <iostream>
 #include <ros/ros.h>
+#include <ObstacleDetector.h>
 #include <std_msgs/Float64.h>
 #include <sensor_msgs/LaserScan.h>
-#include <ObstacleDetector.h>
+#include <iostream>
 
 ObstacleDetector::ObstacleDetector() {
     ROS_INFO_STREAM("ObstacleDetector Constructor called.");
@@ -42,19 +41,24 @@ ObstacleDetector::ObstacleDetector() {
     // Publish to dist topic
     distPub = node.advertise<std_msgs::Float64>("/dist", 500);
     // Subscribe to dist topic
-    distSub = node.subscribe<std_msgs::Float64>("/dist", 500, &ObstacleDetector::distCallback, this);
+  distSub = node.subscribe<std_msgs::Float64>("/dist", 500,
+                                              &ObstacleDetector::distCallback,
+                                              this);
     // Subscribe to scan topic
-    sub = node.subscribe<sensor_msgs::LaserScan>("/scan", 500, &ObstacleDetector::laserCallback, this);
+  sub = node.subscribe<sensor_msgs::LaserScan>("/scan", 500,
+                                               &ObstacleDetector::laserCallback,
+                                               this);
 }
 
-void ObstacleDetector::laserCallback(const sensor_msgs::LaserScan::ConstPtr& data) {
+void ObstacleDetector::laserCallback(
+    const sensor_msgs::LaserScan::ConstPtr& data) {
     ROS_INFO_STREAM("Callback for /scan topic called.");
     // Loop through the laser scan data
     float minDist = 2000;
-    for(const auto& range: data->ranges) {
-        if(range < minDist) {
-            minDist = range;
-        }
+  for (const auto& range : data->ranges) {
+    if (range < minDist) {
+      minDist = range;
+    }
     }
     // Create object of type std_msgs::Float64 and publish data to dist topic
     std_msgs::Float64 val;
@@ -63,13 +67,14 @@ void ObstacleDetector::laserCallback(const sensor_msgs::LaserScan::ConstPtr& dat
 }
 
 void ObstacleDetector::distCallback(const std_msgs::Float64::ConstPtr& data) {
-    ROS_INFO_STREAM("Callback for /dist topic called.");
-    // If distance is than 2 then change isCollision flag to true, otherwise make it false
-    if(data->data < 2.00) {
-        isCollision = true;
-    } else {
-        isCollision = false;
-    }
+  ROS_INFO_STREAM("Callback for /dist topic called.");
+  // If distance is than 2 then change isCollision flag to true,
+  // otherwise make it false
+  if (data->data < 2.00) {
+    isCollision = true;
+  } else {
+    isCollision = false;
+  }
 }
 
 bool ObstacleDetector::getIsCollision() {

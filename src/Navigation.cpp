@@ -76,8 +76,7 @@ void Navigation::move(bool detect) {
     pubNav.publish(msg);
     ros::spinOnce();
     loopRate.sleep();
-
-    if(detect == false) {
+    if (detect == false) {
         break;
     }
   }

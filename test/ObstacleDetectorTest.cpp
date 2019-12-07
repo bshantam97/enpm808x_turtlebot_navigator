@@ -67,25 +67,26 @@ TEST(ObstacleDetectorTest, CollisionMethodTest) {
  * @return     none
  */
 TEST(ObstacleDetectorTest, LaserCallbackMethodTest) {
-    // Object of type ObstacleDetector created
-    ObstacleDetector obstacleDetector;
-    // Create ros node
-    ros::NodeHandle node;
-    // Create a ros publisher
-    ros::Publisher pub = node.advertise<sensor_msgs::LaserScan>("/scan", 50);
-    // Create a ros subscriber
-    ros::Subscriber sub = node.subscribe<sensor_msgs::LaserScan>("/scan", 50, &ObstacleDetector::laserCallback, &obstacleDetector);
+  // Object of type ObstacleDetector created
+  ObstacleDetector obstacleDetector;
+  // Create ros node
+  ros::NodeHandle node;
+  // Create a ros publisher
+  ros::Publisher pub = node.advertise<sensor_msgs::LaserScan>("/scan", 50);
+  // Create a ros subscriber
+  ros::Subscriber sub = node.subscribe<sensor_msgs::LaserScan>(
+      "/scan", 50, &ObstacleDetector::laserCallback, &obstacleDetector);
 
-    // Check collision flag
-    while(ros::ok()) {
-        if(obstacleDetector.getIsCollision() == false) {
-            break;
-        }
-        ros::spinOnce();
+  // Check collision flag
+  while (ros::ok()) {
+    if (obstacleDetector.getIsCollision() == false) {
+      break;
     }
+    ros::spinOnce();
+  }
 
-    // Expect the collision flag to be false
-    EXPECT_FALSE(obstacleDetector.getIsCollision());
+  // Expect the collision flag to be false
+  EXPECT_FALSE(obstacleDetector.getIsCollision());
 }
 
 /**
@@ -95,23 +96,24 @@ TEST(ObstacleDetectorTest, LaserCallbackMethodTest) {
  * @return     none
  */
 TEST(ObstacleDetectorTest, DistCallbackMethodTest) {
-    // Object of type ObstacleDetector created
-    ObstacleDetector obstacleDetector;
-    // Create ros node
-    ros::NodeHandle node;
-    // Create a ros publisher
-    ros::Publisher pub = node.advertise<std_msgs::Float64>("/dist", 50);
-    // Create a ros subscriber
-    ros::Subscriber sub = node.subscribe<std_msgs::Float64>("/dist", 50, &ObstacleDetector::distCallback, &obstacleDetector);
+  // Object of type ObstacleDetector created
+  ObstacleDetector obstacleDetector;
+  // Create ros node
+  ros::NodeHandle node;
+  // Create a ros publisher
+  ros::Publisher pub = node.advertise<sensor_msgs::LaserScan>("/scan", 50);
+  // Create a ros subscriber
+  ros::Subscriber sub = node.subscribe<sensor_msgs::LaserScan>(
+      "/scan", 50, &ObstacleDetector::laserCallback, &obstacleDetector);
 
-    // Check collision flag
-    while(ros::ok()) {
-        if(obstacleDetector.getIsCollision() == false) {
-            break;
-        }
-        ros::spinOnce();
+  // Check collision flag
+  while (ros::ok()) {
+    if (obstacleDetector.getIsCollision() == false) {
+      break;
     }
+    ros::spinOnce();
+  }
 
-    // Expect the collision flag to be false
-    EXPECT_FALSE(obstacleDetector.getIsCollision());
+  // Expect the collision flag to be false
+  EXPECT_FALSE(obstacleDetector.getIsCollision());
 }

@@ -29,11 +29,10 @@
  *@brief      Test cases for ObstacleDetector.cpp file.
  */
 
-#include <iostream>
 #include <gtest/gtest.h>
 #include <ros/ros.h>
 #include <Navigation.h>
-#include <ObstacleDetector.h>
+#include <iostream>
 
 /**
  * @brief      Tests the object creation of the class Navigation
