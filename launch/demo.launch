@@ -22,4 +22,10 @@
     </node>
 
     <node type="rviz" name="rviz" pkg="rviz" args="-d $(find turtlebot_navigator)/rviz/octomap.rviz"/>
+
+    <node
+        pkg="rosbag"
+        name="rosbag"
+        type="record" args="--all --output-name=$(find turtlebot_navigator)/results/turtlebot_navigator.bag -x /camera/(.*) --duration=$(arg time)" if="$(arg record)"
+    />
 </launch>
