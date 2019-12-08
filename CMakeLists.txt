@@ -41,6 +41,7 @@ target_link_libraries(turtlebot_navigator ${catkin_LIBRARIES})
 
 if(CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
   add_rostest_gtest(turtlebot_navigator_test test/test.launch test/main.cpp test/NavigationTest.cpp test/ObstacleDetectorTest.cpp src/Navigation.cpp src/ObstacleDetector.cpp)
   target_link_libraries(turtlebot_navigator_test ${catkin_LIBRARIES})
   add_dependencies(turtlebot_navigator turtlebot_navigator_test ${catkin_EXPORTED_TARGETS})
