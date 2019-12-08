@@ -24,9 +24,9 @@
  */
 
 /**
- *@file       ObstacleDetectorTest.cpp
+ *@file       NavigationTest.cpp
  *@copyright  MIT License
- *@brief      Test cases for ObstacleDetector.cpp file.
+ *@brief      Test cases for NavigationTest.cpp file.
  */
 
 #include <gtest/gtest.h>

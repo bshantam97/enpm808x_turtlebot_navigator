@@ -24,20 +24,20 @@
  */
 
 /**
- *@file       ObstacleDetector.cpp
- *@author     Shantam Bajpai
+ *@file       Navigation.cpp
  *@copyright  MIT License
  *@brief      Describes the Navigation class.
  */
+
+#include <ros/ros.h>
+#include <ObstacleDetector.h>
 #include <Navigation.h>
 #include <geometry_msgs/Twist.h>
-#include <sensor_msgs/LaserScan.h>
-
+#include <iostream>
 
 /*
  * @brief: Constructor for the Navigation Class
  */
-
 Navigation::Navigation() {
   // Initialize the publisher to advertise the velocities to the turtlebot
   pubNav = nh.advertise<geometry_msgs::Twist>("/mobile_base/commands/velocity",
@@ -63,8 +63,7 @@ Navigation::Navigation() {
 void Navigation::move(bool detect) {
   ros::Rate loopRate(10);
   while (ros::ok()) {
-    detect = obstacle.getIsCollision();
-    if (detect == true) {
+    if (obstacle.getIsCollision() == true) {
       ROS_WARN_STREAM("The object is in range, Turn !!!");
       msg.linear.x = 0;
       msg.angular.z = 0.6;
@@ -76,6 +75,8 @@ void Navigation::move(bool detect) {
     pubNav.publish(msg);
     ros::spinOnce();
     loopRate.sleep();
+
+    // break if using move() method for testing
     if (detect == false) {
         break;
     }
@@ -85,9 +86,8 @@ void Navigation::move(bool detect) {
 /*
  * @brief: Destructor declaration for the Navigation class
  */
-
 Navigation::~Navigation() {
-  ROS_INFO("Destructor being invoked: linear and  angular velocities are zero");
+  ROS_INFO_STREAM("Destructor being invoked: linear and  angular velocities are zero");
 
   // Set the linear and angular velocities to be zero
   msg.linear.x = 0;

@@ -5,6 +5,7 @@
   <description>The turtlebot_navigator package</description>
 
   <maintainer email="arpitdec5@gmail.com">Arpit Aggarwal</maintainer>
+  <maintainer email="sbajpai@umd.edu">Shantam Bajpai</maintainer>
   <license>MIT</license>
 
   <buildtool_depend>catkin</buildtool_depend>
