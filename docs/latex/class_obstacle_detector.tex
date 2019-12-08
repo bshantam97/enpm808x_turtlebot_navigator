@@ -1,0 +1,114 @@
+\hypertarget{class_obstacle_detector}{}\section{Obstacle\+Detector Class Reference}
+\label{class_obstacle_detector}\index{Obstacle\+Detector@{Obstacle\+Detector}}
+
+
+{\ttfamily \#include $<$Obstacle\+Detector.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_obstacle_detector_ae97e1085c7f6a3418faa1295c81d0b87}{Obstacle\+Detector} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_obstacle_detector}{Obstacle\+Detector} object. \end{DoxyCompactList}\item 
+\hyperlink{class_obstacle_detector_aa3b42649fc5c973f677a4aba968d25cc}{$\sim$\+Obstacle\+Detector} ()
+\begin{DoxyCompactList}\small\item\em Destructor of the \hyperlink{class_obstacle_detector}{Obstacle\+Detector} class. \end{DoxyCompactList}\item 
+void \hyperlink{class_obstacle_detector_adac40fe27cffd6e331d1e97e7b6ca24b}{laser\+Callback} (const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&data)
+\begin{DoxyCompactList}\small\item\em Callback for ros subscriber sub. \end{DoxyCompactList}\item 
+void \hyperlink{class_obstacle_detector_af30f1b30086872b68b446e54052534b2}{dist\+Callback} (const std\+\_\+msgs\+::\+Float64\+::\+Const\+Ptr \&data)
+\begin{DoxyCompactList}\small\item\em Callback for ros subscriber dist\+Sub. \end{DoxyCompactList}\item 
+bool \hyperlink{class_obstacle_detector_aede4ced75212e4c1f57ded5ebb0db52d}{get\+Is\+Collision} ()
+\begin{DoxyCompactList}\small\item\em Returns the value of is\+Collision. \end{DoxyCompactList}\item 
+void \hyperlink{class_obstacle_detector_affe63dc23f2365c719f788689798598d}{set\+Is\+Collision} (bool collision\+Val)
+\begin{DoxyCompactList}\small\item\em Returns the value of is\+Collision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Obstacle\+Detector@{Obstacle\+Detector}!Obstacle\+Detector@{Obstacle\+Detector}}
+\index{Obstacle\+Detector@{Obstacle\+Detector}!Obstacle\+Detector@{Obstacle\+Detector}}
+\subsubsection[{\texorpdfstring{Obstacle\+Detector()}{ObstacleDetector()}}]{\setlength{\rightskip}{0pt plus 5cm}Obstacle\+Detector\+::\+Obstacle\+Detector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_obstacle_detector_ae97e1085c7f6a3418faa1295c81d0b87}{}\label{class_obstacle_detector_ae97e1085c7f6a3418faa1295c81d0b87}
+
+
+Constructs the \hyperlink{class_obstacle_detector}{Obstacle\+Detector} object. 
+
+\index{Obstacle\+Detector@{Obstacle\+Detector}!````~Obstacle\+Detector@{$\sim$\+Obstacle\+Detector}}
+\index{````~Obstacle\+Detector@{$\sim$\+Obstacle\+Detector}!Obstacle\+Detector@{Obstacle\+Detector}}
+\subsubsection[{\texorpdfstring{$\sim$\+Obstacle\+Detector()}{~ObstacleDetector()}}]{\setlength{\rightskip}{0pt plus 5cm}Obstacle\+Detector\+::$\sim$\+Obstacle\+Detector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_obstacle_detector_aa3b42649fc5c973f677a4aba968d25cc}{}\label{class_obstacle_detector_aa3b42649fc5c973f677a4aba968d25cc}
+
+
+Destructor of the \hyperlink{class_obstacle_detector}{Obstacle\+Detector} class. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Obstacle\+Detector@{Obstacle\+Detector}!dist\+Callback@{dist\+Callback}}
+\index{dist\+Callback@{dist\+Callback}!Obstacle\+Detector@{Obstacle\+Detector}}
+\subsubsection[{\texorpdfstring{dist\+Callback(const std\+\_\+msgs\+::\+Float64\+::\+Const\+Ptr \&data)}{distCallback(const std_msgs::Float64::ConstPtr &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Obstacle\+Detector\+::dist\+Callback (
+\begin{DoxyParamCaption}
+\item[{const std\+\_\+msgs\+::\+Float64\+::\+Const\+Ptr \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{class_obstacle_detector_af30f1b30086872b68b446e54052534b2}{}\label{class_obstacle_detector_af30f1b30086872b68b446e54052534b2}
+
+
+Callback for ros subscriber dist\+Sub. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & const std\+\_\+msgs\+::\+Float64\+::\+Const\+Ptr. \\
+\hline
+\end{DoxyParams}
+\index{Obstacle\+Detector@{Obstacle\+Detector}!get\+Is\+Collision@{get\+Is\+Collision}}
+\index{get\+Is\+Collision@{get\+Is\+Collision}!Obstacle\+Detector@{Obstacle\+Detector}}
+\subsubsection[{\texorpdfstring{get\+Is\+Collision()}{getIsCollision()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Obstacle\+Detector\+::get\+Is\+Collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_obstacle_detector_aede4ced75212e4c1f57ded5ebb0db52d}{}\label{class_obstacle_detector_aede4ced75212e4c1f57ded5ebb0db52d}
+
+
+Returns the value of is\+Collision. 
+
+\index{Obstacle\+Detector@{Obstacle\+Detector}!laser\+Callback@{laser\+Callback}}
+\index{laser\+Callback@{laser\+Callback}!Obstacle\+Detector@{Obstacle\+Detector}}
+\subsubsection[{\texorpdfstring{laser\+Callback(const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&data)}{laserCallback(const sensor_msgs::LaserScan::ConstPtr &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Obstacle\+Detector\+::laser\+Callback (
+\begin{DoxyParamCaption}
+\item[{const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{class_obstacle_detector_adac40fe27cffd6e331d1e97e7b6ca24b}{}\label{class_obstacle_detector_adac40fe27cffd6e331d1e97e7b6ca24b}
+
+
+Callback for ros subscriber sub. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr. \\
+\hline
+\end{DoxyParams}
+\index{Obstacle\+Detector@{Obstacle\+Detector}!set\+Is\+Collision@{set\+Is\+Collision}}
+\index{set\+Is\+Collision@{set\+Is\+Collision}!Obstacle\+Detector@{Obstacle\+Detector}}
+\subsubsection[{\texorpdfstring{set\+Is\+Collision(bool collision\+Val)}{setIsCollision(bool collisionVal)}}]{\setlength{\rightskip}{0pt plus 5cm}void Obstacle\+Detector\+::set\+Is\+Collision (
+\begin{DoxyParamCaption}
+\item[{bool}]{collision\+Val}
+\end{DoxyParamCaption}
+)}\hypertarget{class_obstacle_detector_affe63dc23f2365c719f788689798598d}{}\label{class_obstacle_detector_affe63dc23f2365c719f788689798598d}
+
+
+Returns the value of is\+Collision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collision\+Val} & bool. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/turtlebot\+\_\+navigator/include/\hyperlink{_obstacle_detector_8h}{Obstacle\+Detector.\+h}\item 
+src/turtlebot\+\_\+navigator/src/\hyperlink{_obstacle_detector_8cpp}{Obstacle\+Detector.\+cpp}\end{DoxyCompactItemize}
