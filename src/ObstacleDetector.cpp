@@ -28,6 +28,7 @@
  *@copyright  MIT License
  *@brief      Implements the methods of the ObstacleDetector class.
  */
+
 #include <ros/ros.h>
 #include <ObstacleDetector.h>
 #include <std_msgs/Float64.h>
@@ -54,7 +55,7 @@ void ObstacleDetector::laserCallback(
     const sensor_msgs::LaserScan::ConstPtr& data) {
     ROS_INFO_STREAM("Callback for /scan topic called.");
     // Loop through the laser scan data
-    float minDist = 2000;
+    float minDist = 1500;
   for (const auto& range : data->ranges) {
     if (range < minDist) {
       minDist = range;
@@ -70,7 +71,7 @@ void ObstacleDetector::distCallback(const std_msgs::Float64::ConstPtr& data) {
   ROS_INFO_STREAM("Callback for /dist topic called.");
   // If distance is than 2 then change isCollision flag to true,
   // otherwise make it false
-  if (data->data < 2.00) {
+  if (data->data < 1.5) {
     isCollision = true;
   } else {
     isCollision = false;
