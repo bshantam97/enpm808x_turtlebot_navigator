@@ -30,8 +30,8 @@
  */
 
 #include <ros/ros.h>
-#include <ObstacleDetector.h>
 #include <Navigation.h>
+#include <ObstacleDetector.h>
 #include <geometry_msgs/Twist.h>
 #include <iostream>
 
@@ -87,7 +87,8 @@ void Navigation::move(bool detect) {
  * @brief: Destructor declaration for the Navigation class
  */
 Navigation::~Navigation() {
-  ROS_INFO_STREAM("Destructor being invoked: linear and  angular velocities are zero");
+  ROS_INFO_STREAM("Destructor being invoked:"
+"linear and  angular velocities are zero");
 
   // Set the linear and angular velocities to be zero
   msg.linear.x = 0;

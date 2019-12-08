@@ -52,7 +52,7 @@ class ObstacleDetector {
     ros::Subscriber distSub;
 
     // Variable of type ros::Publisher, published to /dist topic
-    ros::Publisher distPub; 
+    ros::Publisher distPub;
 
  public:
     /**
@@ -76,7 +76,7 @@ class ObstacleDetector {
      * @param data const std_msgs::Float64::ConstPtr.
     */
     void distCallback(const std_msgs::Float64::ConstPtr& data);
- 
+
     /**
      * @brief Returns the value of isCollision.
     */

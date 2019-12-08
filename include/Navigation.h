@@ -24,14 +24,16 @@
  */
 
 /**
- *@file       ObstacleDetector.cpp
- *@author     Shantam Bajpai
+ *@file       Navigation.h
  *@copyright  MIT License
  *@brief      Describes the Navigation class.
  */
-#ifndef INCLUDE_NAVIGATION_H_
-#define INCLUDE_NAVIGATION_H_
 
+#ifndef TURTLEBOT_NAVIGATOR_INCLUDE_NAVIGATION_H_
+#define TURTLEBOT_NAVIGATOR_INCLUDE_NAVIGATION_H_
+
+#include <iostream>
+#include <ros/ros.h>
 #include <geometry_msgs/Twist.h>
 #include <ObstacleDetector.h>
 
@@ -66,7 +68,6 @@ class Navigation {
 
   // Object of ObstacleDetector class
   ObstacleDetector obstacle;
-
 };
 
-#endif // _INCLUDE_NAVIGATION_H_
+#endif // TURTLEBOT_NAVIGATOR_INCLUDE_NAVIGATION_H_
