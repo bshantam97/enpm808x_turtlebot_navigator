@@ -1,4 +1,4 @@
-# Turtlebot Navigator
+# Exploration Robot for generating 3D Maps of an unknown environment using octomap and ROS
 
 [![Build Status](https://travis-ci.org/arp95/enpm808x_turtlebot_navigator.svg?branch=master)](https://travis-ci.org/arp95/enpm808x_turtlebot_navigator)
 [![Coverage Status](https://coveralls.io/repos/github/arp95/enpm808x_turtlebot_navigator/badge.svg?branch=master)](https://coveralls.io/github/arp95/enpm808x_turtlebot_navigator?branch=master)
