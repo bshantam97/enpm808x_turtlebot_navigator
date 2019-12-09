@@ -170,5 +170,7 @@ This will store the index.html file in the folder covout.
 This package was developed following pair programming concepts and AIP. The estimated and completed tasks have been stored in the form of product backlog. Arpit Aggarwal and Shantam Bajpai worked together on this implementation and the commits were made by the driver while the other person acted as the navigator. The AIP can be accessed from the link below.
 [![Solo Iterative Process](https://img.shields.io/badge/AIP-ClickHere-brightgreen.svg?style=flat)](https://docs.google.com/spreadsheets/d/1Gf2HPhlzFCxhdOP1XlNDx23QuuKKL7okn-5ru6TXR6c/edit?usp=sharing)
 
+Sprint notes can be found [here](https://docs.google.com/document/d/1FklToC6_Twc2enWLIpCELDpGJxoGM9w2i3ojj_iZZNQ/edit?usp=sharing)
+
 ## Known bugs
 The octomap uses the /camera/depth/points topic to create the 3D octomap of the environment using the point cloud. Use of ROSBAG for camera topics is inefficient as the bag file increases in size exponentially within a few seconds. Alternative ways need to be found out to record camera topics.
